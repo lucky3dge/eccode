@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#4d31c8">
+  <title>ECCode — Code Studio</title>
+  <link rel="icon" href="./favicon.png">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<div class="page-shell">
+  <header class="topbar">
+    <a class="brand" href="#top" aria-label="ECCode home">
+      <span class="brand-mark">文</span>
+      <span class="brand-copy"><strong>ECCode</strong><small>CODE STUDIO</small></span>
+    </a>
+    <div class="status-pill"><span class="status-dot"></span><span id="loadStatus">Loading code data</span></div>
+  </header>
+
+  <section class="hero" id="top">
+    <div class="hero-copy">
+      <div class="eyebrow"><span class="spark">✦</span> YOUR ECCode WORKSPACE</div>
+      <h1>Find the code.<br><em>See the pattern.</em></h1>
+      <p>One focused workspace to search, inspect, and compare every ECCode entry in your dataset.</p>
+      <div class="hero-chip"><span class="chip-dot"></span> 1,159 SOURCE RECORDS</div>
+    </div>
+    <div class="hero-art" aria-label="Abstract ECCode orbital illustration">
+      <div class="art-aura"></div>
+      <div class="orbit orbit-a"></div><div class="orbit orbit-b"></div><div class="orbit orbit-c"></div>
+      <div class="sun-core"><div class="sun-inner"><span>EC</span><small>CODE</small></div></div>
+      <div class="float tile-a"><span>EC</span><small>INDEX</small></div>
+      <div class="float tile-b"><span>CODE</span></div>
+      <div class="float tile-c"><span>E</span></div>
+      <div class="float tile-d"><span>C</span></div>
+      <div class="float tile-e"><span>01</span></div>
+      <i class="particle p-a"></i><i class="particle p-b"></i><i class="particle p-c"></i><i class="particle p-d"></i><i class="particle p-e"></i>
+      <div class="art-caption"><strong>ECCode SYSTEM</strong><span>SEARCH · MATCH · EXPLORE</span></div>
+    </div>
+  </section>
+
+  <main class="workspace">
+    <section class="panel search-panel">
+      <div class="section-label">01 / SEARCH</div>
+      <div class="panel-heading"><div><h2>Search ECCode</h2><p>Enter an ECCode or code fragment to reveal matching characters and pronunciations.</p></div><span class="count-pill" id="resultCount">0 matches</span></div>
+      <div class="search-box"><span class="search-symbol" aria-hidden="true">⌕</span><input id="codeSearch" type="search" autocomplete="off" spellcheck="false" placeholder="Try yh, di, y, or a shape code…" aria-label="Search ECCode"><button id="playSearchCharacter" class="search-sound-button" type="button" disabled aria-label="Hear selected Chinese character" title="Hear selected Chinese character">♫ Hear</button></div>
+      <div class="quick-filters"><span>QUICK SEARCH</span><button type="button" data-query="y">y</button><button type="button" data-query="yh">yh</button><button type="button" data-query="di">di</button><button type="button" data-query="h">h</button></div>
+      <div class="results-toolbar"><div class="results-heading-copy"><h3 id="resultsTitle">Enter a code to begin</h3><span id="resultsMeta">All records stay hidden until you search.</span></div></div>
+      <div class="results-list" id="resultsList"><div class="empty-state"><div class="empty-orbit"><span>EC</span></div><strong>Ready for your code</strong><p>Type above to reveal matching ECCode records.</p></div></div>
+      <div class="show-more-wrap"><button id="showMore" class="outline-button" type="button" hidden>Show more results</button></div>
+    </section>
+
+    <aside class="panel detail-panel">
+      <div class="section-label">02 / CODE DETAILS</div>
+      <div class="detail-hero"><div class="detail-emblem-wrap"><div class="detail-emblem" aria-label="Selected Chinese character"><span id="detailEmblem">—</span></div><button id="playDetailCharacter" class="detail-sound-button" type="button" disabled aria-label="Hear selected character in Mandarin" title="Hear selected character in Mandarin">♫</button></div><div class="detail-title-copy"><div class="detail-overline">SELECTED CHARACTER</div><h2 id="detailCode">No character selected</h2><p class="detail-pinyin" id="detailPinyin">Pinyin appears here</p><p id="detailSub">Search an ECCode to inspect a character.</p></div>
+        <div class="stroke-order-card" aria-label="Chinese character stroke order"><div class="stroke-order-heading">STROKE ORDER</div><div id="strokeOrderCanvas" class="stroke-order-canvas" aria-label="Animated stroke order for selected Chinese character"><span>字</span></div><button id="playStrokeOrder" class="stroke-order-button" type="button" disabled>▶ Animate</button></div>
+      </div>
+      <div class="detail-grid">
+        <div class="detail-cell"><span>ECCode</span><strong id="fieldCode">—</strong></div>
+        <div class="detail-cell"><span>Sound component</span><strong id="fieldSound">—</strong></div>
+        <div class="detail-cell"><span>Shape component</span><strong id="fieldShape">—</strong></div>
+        <div class="detail-cell"><span>GBK value</span><strong id="fieldGbk">—</strong></div>
+        <div class="detail-cell full"><span>Unicode value</span><strong id="fieldUnicode">—</strong></div>
+      </div>
+      <div class="detail-actions"><button class="primary-button" id="copyCode" type="button" disabled>Copy ECCode</button><button class="outline-button" id="copyDetails" type="button" disabled>Copy details</button></div>
+      <p class="privacy-note"><span class="note-icon">✦</span> Results are read from your local ECCode dataset.</p>
+    </aside>
+
+    <section class="panel dataset-panel">
+      <div class="section-label">03 / DATASET</div>
+      <div class="panel-heading"><div><h2>All ECCode records</h2><p>Entries are kept hidden until a search is performed.</p></div><span class="count-pill" id="datasetCount">1,159 records</span></div>
+      <div class="dataset-stats"><div class="stat-card"><span>RECORDS LOADED</span><strong id="statLoaded">—</strong></div><div class="stat-card"><span>UNIQUE EC CODES</span><strong id="statUnique">—</strong></div><div class="stat-card"><span>SEARCH MODE</span><strong>LIVE</strong></div></div>
+      <p class="dataset-footnote">Search updates automatically as you type. Each result represents a record from the supplied workbook; alternate code entries are preserved.</p>
+    </section>
+  </main>
+  <footer class="footer"><a class="footer-brand" href="#top">ECCode <span>●</span></a><span>CODE STUDIO · LOCAL DATA</span><span id="footerStatus">Ready when you are</span></footer>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/pinyin-pro@3.26.0/dist/index.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/hanzi-writer@3.7/dist/hanzi-writer.min.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
